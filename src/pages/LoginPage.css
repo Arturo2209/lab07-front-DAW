@@ -1,88 +1,114 @@
-/* src/pages/LoginPage.css */
+/* No uses 100vh si hay navbar fijo arriba, usa min-height y padding-top */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+}
+
 .login-container {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    padding: 20px;
-  }
-  
-  .login-card {
-    background: white;
-    border-radius: 15px;
-    padding: 2.5rem;
-    width: 100%;
-    max-width: 450px;
-    border: none;
-  }
-  
-  .login-header {
-    color: #2c3e50;
-  }
-  
-  .login-icon {
-    font-size: 3rem;
-    color: #3498db;
-    background: rgba(52, 152, 219, 0.1);
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .input-group-text {
-    background-color: #f8f9fa;
-    transition: all 0.3s;
-  }
-  
-  .form-control:focus {
-    box-shadow: none;
-    border-color: #3498db;
-  }
-  
-  .form-control:focus + .input-group-text {
-    background-color: #e3f2fd;
-    color: #3498db;
-  }
-  
-  .btn-primary {
-    background-color: #3498db;
-    border: none;
-    padding: 10px;
-    font-weight: 500;
-    transition: all 0.3s;
-  }
-  
-  .btn-primary:hover {
-    background-color: #2980b9;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(41, 128, 185, 0.3);
-  }
-  
-  .btn-outline-primary {
-    transition: all 0.3s;
-  }
-  
-  .btn-outline-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Efecto para el formulario */
-  form {
-    animation: fadeIn 0.5s ease-in-out;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px); /* Ajusta si el navbar mide 60px */
+  padding-top: 60px; /* Deja espacio para el navbar si está fijo */
+}
+
+.login-card {
+  background: #ffffff;
+  padding: 40px 35px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 128, 255, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* El resto permanece igual */
+.login-title {
+  font-size: 28px;
+  color: #0077c2;
+  margin-bottom: 10px;
+}
+
+.login-subtitle {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+input {
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #0077c2;
+  outline: none;
+}
+
+button {
+  padding: 12px;
+  background: linear-gradient(to right, #00aaff, #0077c2);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:disabled {
+  background: #b0d8e9;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background: linear-gradient(to right, #009fe3, #0064a2);
+}
+
+.login-register {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #444;
+}
+
+.login-register a {
+  color: #0077c2;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-register a:hover {
+  text-decoration: underline;
+}
+
+.login-error {
+  background: #ffdddd;
+  color: #c62828;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.login-error button {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #c62828;
+  cursor: pointer;
+}

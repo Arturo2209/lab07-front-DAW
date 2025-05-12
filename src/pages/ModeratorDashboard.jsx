@@ -1,196 +1,152 @@
 // src/pages/ModeratorDashboard.jsx
 import React from 'react';
-import './ModeratorDashboard.css'; // Archivo CSS adicional para personalización
+import './ModeratorDashboard.css';
 
 const ModeratorDashboard = () => (
-  <div className="moderator-dashboard container-fluid py-4">
-    <div className="row mb-4">
-      <div className="col">
-        <div className="d-flex align-items-center">
-          <i className="bi bi-shield-check fs-1 text-primary me-3"></i>
-          <div>
-            <h1 className="fw-bold mb-0">Panel de Moderador</h1>
-            <p className="text-muted">Herramientas y funciones disponibles para moderadores</p>
-          </div>
+  <div className="moderator-dashboard">
+    <header className="dashboard-header">
+      <div className="header-content">
+        <div className="icon-wrapper">
+          <i className="fas fa-user-shield"></i>
         </div>
-        <hr className="mt-3" />
+        <div className="header-text">
+          <h1>Centro de Control de Moderación</h1>
+          <p>Supervisión y gestión de la comunidad</p>
+        </div>
       </div>
-    </div>
+    </header>
 
-    <div className="row g-4 mb-4">
+    <div className="dashboard-grid">
       {/* Tarjeta 1: Rol del Moderador */}
-      <div className="col-md-4">
-        <div className="card h-100 shadow-sm border-primary">
-          <div className="card-header bg-primary text-white">
-            <h5 className="mb-0">
-              <i className="bi bi-info-circle me-2"></i>
-              Tu Rol
-            </h5>
-          </div>
-          <div className="card-body">
-            <p className="card-text">
-              Como <strong>Moderador</strong>, tienes responsabilidades intermedias entre los usuarios 
-              regulares y los administradores. Tu función principal es mantener la calidad y el orden 
-              dentro de la plataforma.
-            </p>
-            <ul className="list-group list-group-flush">
-              <li className="list-group-item">
-                <i className="bi bi-check-circle-fill text-success me-2"></i>
-                Supervisión de contenido
-              </li>
-              <li className="list-group-item">
-                <i className="bi bi-check-circle-fill text-success me-2"></i>
-                Resolución de reportes
-              </li>
-              <li className="list-group-item">
-                <i className="bi bi-check-circle-fill text-success me-2"></i>
-                Asistencia a usuarios
-              </li>
-            </ul>
+      <div className="dashboard-card role-card">
+        <div className="card-header">
+          <i className="fas fa-id-card"></i>
+          <h2>Tu Rol en la Plataforma</h2>
+        </div>
+        <div className="card-content">
+          <p>
+            Como <span className="highlight">Moderador</span>, eres el puente entre los usuarios y los administradores, 
+            garantizando un entorno seguro y agradable para todos.
+          </p>
+          <div className="responsibilities">
+            <div className="responsibility-item">
+              <i className="fas fa-eye"></i>
+              <span>Vigilancia de contenido</span>
+            </div>
+            <div className="responsibility-item">
+              <i className="fas fa-flag"></i>
+              <span>Gestión de reportes</span>
+            </div>
+            <div className="responsibility-item">
+              <i className="fas fa-hands-helping"></i>
+              <span>Apoyo a usuarios</span>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Tarjeta 2: Funciones sobre Usuarios */}
-      <div className="col-md-4">
-        <div className="card h-100 shadow-sm border-warning">
-          <div className="card-header bg-warning text-dark">
-            <h5 className="mb-0">
-              <i className="bi bi-people-fill me-2"></i>
-              Gestión de Usuarios
-            </h5>
+      <div className="dashboard-card users-card">
+        <div className="card-header">
+          <i className="fas fa-users-cog"></i>
+          <h2>Gestión de Usuarios</h2>
+        </div>
+        <div className="card-content">
+          <div className="alert-note">
+            <i className="fas fa-exclamation-circle"></i>
+            <span>Acciones permitidas en tu rol</span>
           </div>
-          <div className="card-body">
-            <p className="card-text">
-              Tienes capacidades limitadas para gestionar usuarios dentro del sistema:
-            </p>
-            <div className="alert alert-secondary py-2">
-              <i className="bi bi-exclamation-triangle-fill me-2"></i>
-              <strong>Acciones disponibles:</strong>
-            </div>
-            <ul className="list-group list-group-flush">
-              <li className="list-group-item">
-                <i className="bi bi-person-check me-2 text-primary"></i>
-                Verificar cuentas de usuarios
-              </li>
-              <li className="list-group-item">
-                <i className="bi bi-chat-left-text me-2 text-primary"></i>
-                Enviar advertencias
-              </li>
-              <li className="list-group-item">
-                <i className="bi bi-eye me-2 text-primary"></i>
-                Supervisar actividad
-              </li>
-              <li className="list-group-item">
-                <i className="bi bi-flag me-2 text-primary"></i>
-                Reportar usuarios problemáticos
-              </li>
-            </ul>
-          </div>
+          <ul className="actions-list">
+            <li>
+              <i className="fas fa-user-check"></i>
+              <span>Verificar identidades</span>
+            </li>
+            <li>
+              <i className="fas fa-comment-exclamation"></i>
+              <span>Emitir advertencias</span>
+            </li>
+            <li>
+              <i className="fas fa-history"></i>
+              <span>Auditar actividad</span>
+            </li>
+            <li>
+              <i className="fas fa-exclamation-triangle"></i>
+              <span>Escalar problemas</span>
+            </li>
+          </ul>
         </div>
       </div>
 
       {/* Tarjeta 3: Herramientas de Moderación */}
-      <div className="col-md-4">
-        <div className="card h-100 shadow-sm border-success">
-          <div className="card-header bg-success text-white">
-            <h5 className="mb-0">
-              <i className="bi bi-tools me-2"></i>
-              Herramientas
-            </h5>
-          </div>
-          <div className="card-body">
-            <p className="card-text">
-              Acceso rápido a las principales herramientas de moderación:
-            </p>
-            <div className="d-grid gap-2">
-              <button className="btn btn-outline-primary text-start">
-                <i className="bi bi-list-check me-2"></i>
-                Panel de Reportes
-              </button>
-              <button className="btn btn-outline-primary text-start">
-                <i className="bi bi-chat-square-text me-2"></i>
-                Moderación de Comentarios
-              </button>
-              <button className="btn btn-outline-primary text-start">
-                <i className="bi bi-file-earmark-text me-2"></i>
-                Revisión de Contenido
-              </button>
-              <button className="btn btn-outline-primary text-start">
-                <i className="bi bi-graph-up me-2"></i>
-                Estadísticas de Actividad
-              </button>
-            </div>
+      <div className="dashboard-card tools-card">
+        <div className="card-header">
+          <i className="fas fa-toolbox"></i>
+          <h2>Herramientas Rápidas</h2>
+        </div>
+        <div className="card-content">
+          <div className="tools-grid">
+            <button className="tool-button">
+              <i className="fas fa-clipboard-list"></i>
+              <span>Reportes Pendientes</span>
+            </button>
+            <button className="tool-button">
+              <i className="fas fa-comments"></i>
+              <span>Comentarios</span>
+            </button>
+            <button className="tool-button">
+              <i className="fas fa-file-alt"></i>
+              <span>Contenidos</span>
+            </button>
+            <button className="tool-button">
+              <i className="fas fa-chart-line"></i>
+              <span>Métricas</span>
+            </button>
           </div>
         </div>
       </div>
-    </div>
 
-    {/* Sección de Actividad Reciente */}
-    <div className="row">
-      <div className="col">
-        <div className="card shadow-sm">
-          <div className="card-header bg-white">
-            <h5 className="mb-0">
-              <i className="bi bi-clock-history me-2"></i>
-              Actividad Reciente Requiere Atención
-            </h5>
+      {/* Sección de Actividad Reciente */}
+      <div className="dashboard-card activity-card">
+        <div className="card-header">
+          <i className="fas fa-bell"></i>
+          <h2>Alertas Requeridas</h2>
+        </div>
+        <div className="card-content">
+          <div className="activity-table">
+            <div className="table-header">
+              <span>ID</span>
+              <span>Categoría</span>
+              <span>Usuario</span>
+              <span>Descripción</span>
+              <span>Acción</span>
+            </div>
+            <div className="table-row">
+              <span className="case-id">#1254</span>
+              <span className="case-type comment-case">Comentario</span>
+              <span className="case-user">usuario23</span>
+              <span className="case-desc">Lenguaje inapropiado</span>
+              <button className="case-action">Evaluar</button>
+            </div>
+            <div className="table-row">
+              <span className="case-id">#1253</span>
+              <span className="case-type report-case">Reporte</span>
+              <span className="case-user">usuario45</span>
+              <span className="case-desc">Contenido duplicado</span>
+              <button className="case-action">Evaluar</button>
+            </div>
+            <div className="table-row">
+              <span className="case-id">#1252</span>
+              <span className="case-type request-case">Solicitud</span>
+              <span className="case-user">usuario12</span>
+              <span className="case-desc">Verificación de cuenta</span>
+              <button className="case-action">Evaluar</button>
+            </div>
           </div>
-          <div className="card-body">
-            <div className="table-responsive">
-              <table className="table table-hover">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Tipo</th>
-                    <th>Usuario</th>
-                    <th>Detalle</th>
-                    <th>Acciones</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>#1254</td>
-                    <td><span className="badge bg-warning">Comentario</span></td>
-                    <td>usuario23</td>
-                    <td>Lenguaje inapropiado</td>
-                    <td>
-                      <button className="btn btn-sm btn-outline-primary me-1">
-                        Revisar
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#1253</td>
-                    <td><span className="badge bg-danger">Reporte</span></td>
-                    <td>usuario45</td>
-                    <td>Contenido duplicado</td>
-                    <td>
-                      <button className="btn btn-sm btn-outline-primary me-1">
-                        Revisar
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#1252</td>
-                    <td><span className="badge bg-info">Solicitud</span></td>
-                    <td>usuario12</td>
-                    <td>Verificación de cuenta</td>
-                    <td>
-                      <button className="btn btn-sm btn-outline-primary me-1">
-                        Revisar
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div className="text-end">
-              <button className="btn btn-primary">
-                <i className="bi bi-arrow-right-circle me-1"></i>
-                Ver todos los reportes
-              </button>
-            </div>
+          <div className="view-all">
+            <button className="view-all-button">
+              <i className="fas fa-arrow-right"></i>
+              <span>Ver todas las alertas</span>
+            </button>
           </div>
         </div>
       </div>
